@@ -1,17 +1,34 @@
-type StringOrNum = string | number
-type objWithName = { name: string, uid: StringOrNum }
+// let greet: Function;
 
-const logDetails = (uid: string | number, item: string): void => {
-    console.log(`${item} has a uid of ${uid}`)
-}
-const logDetailsImproved = (uid: StringOrNum, item: string): void => {
-    console.log(`${item} has a uid of ${uid}`)
-}
+// example 1
+let greet: (a: string, b: string) => void
 
-const greet = (user: { name: string, uid: string | number }): void => {
-    console.log(`${user.name} says hello`)
+greet = (name: string, greeting: string) => {
+    console.log(`${name} says ${greeting}`)
 }
 
-const greetImproved = (user: objWithName): void => {
-    console.log(`${user.name} says hello`)
+// example 2
+let calc: (a: number, b: number, c: string) => number
+
+calc = (numOne: number, numTwo: number, action: string) => {
+    if (action === 'add') {
+        return numOne + numTwo
+    } else {
+        return numOne - numTwo
+    }
+}
+
+// example 3
+type person = { name: string, age: number }
+
+let logDetails: (obj: { name: string, age: number }) => void
+
+let logDetailsImproved: (obj: person) => void
+
+logDetails = (ninja: { name: string, age: number }) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`)
+}
+
+logDetailsImproved = (ninja: person) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`)
 }
