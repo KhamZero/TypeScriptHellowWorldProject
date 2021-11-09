@@ -16,10 +16,11 @@ var invTwo = new Invoice('luigi', 'work on the mario website', 300);
 var invoices = []; // only Invoices are allowed
 invoices.push(invOne);
 invoices.push(invTwo);
-invOne.client = 'yoshi';
+// invOne.client = 'yoshi' // readonly
 invTwo.amount = 400;
-console.log(invOne, invTwo);
-console.log(invoices);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.amount, inv.format());
+});
 //===================
 var form = document.querySelector('.new-item-form');
 // inputs

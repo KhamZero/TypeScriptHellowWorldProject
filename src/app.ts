@@ -1,8 +1,8 @@
 // classes
 class Invoice {
-    client: string
-    details: string
-    amount: number
+    readonly client: string
+    private details: string // we won't have access to private property by console.log()
+    public amount: number
 
     constructor(c: string, d: string, a: number) {
         this.client = c
@@ -23,12 +23,12 @@ let invoices: Invoice[] = [] // only Invoices are allowed
 invoices.push(invOne)
 invoices.push(invTwo)
 
-invOne.client = 'yoshi'
+// invOne.client = 'yoshi' // readonly
 invTwo.amount = 400
 
-console.log(invOne, invTwo)
-
-console.log(invoices)
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format())
+})
 
 //===================
 const form = document.querySelector('.new-item-form') as HTMLFormElement
