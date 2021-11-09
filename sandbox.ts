@@ -1,9 +1,17 @@
-const character: string = 'mario'
+let character = 'mario'
+let age = 30
+let isBlackBelt = false
 
-console.log(character)
+character = 'luigi'
 
-const inputs = document.querySelectorAll('input')
+//age = 'yoshi' // We cannot set string value
 
-inputs.forEach(input => {
-    console.log(input)
-})
+isBlackBelt = true
+
+age = 40
+
+const circ = (diameter: number) => {
+    return diameter * Math.PI
+}
+
+console.log(circ(age))
