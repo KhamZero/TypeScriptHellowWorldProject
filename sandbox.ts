@@ -1,39 +1,44 @@
-//arrays
-let names = ['luigi', 'mario', 'Rick']
+// explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-// names = 'hello' // cannot change type of variable
+// age = 'luigi' // age must be a string
+age = 30
 
-names.push('toad')
-// names.push(2) // number is not allowed
+// isLoggedIn = 25 // isLoggedIn must be a boolean
+isLoggedIn = true;
 
-let numbers = [10, 20, 30, 40]
+// arrays
+let ninjas: string[]
+// ninjas = [10, 23] // not string values
+ninjas = ['charlie', 'john']
 
-numbers.push(25)
-// numbers.push('shaun') // string is not allowed
+// ninjas.push(1) // cannot push number
+ninjas.push('shaun')
 
-let mixed = ['ken', 4, 'charlie', 8, 10]
+// union types
+let mixed: (string | number)[];
+mixed.push('some string')
+mixed.push(10)
 
-mixed.push('hi')
-mixed.push(20)
-mixed[0] = 1
+// mixed.push(false) // cannot push boolean
+console.log(mixed)
 
-// objects
-let ninja = {
-    name: 'mario',
-    belt: 'black',
-    age: 30,
+let uid: string | number
+uid = '12345ad'
+uid = 12345
 
+//objects
+let ninjaOne: object
+ninjaOne = { name: 'yoshi', age: 30 }
+ninjaOne = []
+
+let ninjaTwo {
+    name: string,
+    age: number,
+    beltColour: string
 }
 
-ninja.age = 40
-ninja.name = 'charlie'
-// ninja.belt = 10
-// ninja.skills = 'something' // cannot define non-existing properties
+ninjaTwo = { name: name, age: 'someAge', beltColour: 'black' }
 
-ninja = {
-    name: 'rick',
-    belt: 'orange',
-    // age: '200' // we have to have the same structure as before (number type)
-    age: 40,
-    // skills: [] // we have to have the same structure as before (skills property)
-}
