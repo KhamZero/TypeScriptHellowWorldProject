@@ -1,21 +1,13 @@
 "use strict";
-var greet;
-// greet = 'hello'
-greet = function () {
-    console.log('hello, again');
+var logDetails = function (uid, item) {
+    console.log(item + " has a uid of " + uid);
 };
-var add = function (a, b, c) {
-    console.log(a + b);
-    if (c !== undefined) {
-        console.log(c);
-    }
+var logDetailsImproved = function (uid, item) {
+    console.log(item + " has a uid of " + uid);
 };
-add(1, 3);
-var minus = function (a, b) {
-    return a - b;
+var greet = function (user) {
+    console.log(user.name + " says hello");
 };
-var result = minus(10, 7);
-// result = 'something else' // we cannot change the type number
-var minus_2 = function (a, b) {
-    return a - b;
+var greetImproved = function (user) {
+    console.log(user.name + " says hello");
 };

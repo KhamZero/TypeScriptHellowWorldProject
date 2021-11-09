@@ -1,27 +1,17 @@
-let greet: Function
+type StringOrNum = string | number
+type objWithName = { name: string, uid: StringOrNum }
 
-// greet = 'hello'
-
-greet = () => {
-    console.log('hello, again')
+const logDetails = (uid: string | number, item: string): void => {
+    console.log(`${item} has a uid of ${uid}`)
+}
+const logDetailsImproved = (uid: StringOrNum, item: string): void => {
+    console.log(`${item} has a uid of ${uid}`)
 }
 
-const add = (a: number, b: number, c?: number | string): void => {
-    console.log(a + b)
-    if (c !== undefined) {
-        console.log(c)
-    }
+const greet = (user: { name: string, uid: string | number }): void => {
+    console.log(`${user.name} says hello`)
 }
 
-add(1, 3)
-
-const minus = (a: number, b: number) => {
-    return a - b
-}
-
-let result = minus(10, 7)
-// result = 'something else' // we cannot change the type number
-
-const minus_2 = (a: number, b: number): number => {
-    return a - b
+const greetImproved = (user: objWithName): void => {
+    console.log(`${user.name} says hello`)
 }
