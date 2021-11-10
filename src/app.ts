@@ -27,6 +27,19 @@ greetPerson(me)
 
 
 import { Invoice } from './classes/invoice.js'
+import { Payment } from './classes/Payment.js'
+import { HasFormatter } from './interfaces/HasFormatter.js'
+
+
+let docOne: HasFormatter
+let docTwo: HasFormatter
+
+docOne = new Invoice('yoshi', 'web work', 250)
+docTwo = new Payment('john', 'plumbing work', 200)
+
+let docs: HasFormatter[] = []
+docs.push(docOne)
+docs.push(docTwo)
 
 const invOne = new Invoice('mario', 'work on the mario website', 250)
 const invTwo = new Invoice('luigi', 'work on the mario website', 300)
@@ -35,6 +48,8 @@ let invoices: Invoice[] = [] // only Invoices are allowed
 
 invoices.push(invOne)
 invoices.push(invTwo)
+
+docs.push(invOne)
 
 // invOne.client = 'yoshi' // readonly
 invTwo.amount = 400
